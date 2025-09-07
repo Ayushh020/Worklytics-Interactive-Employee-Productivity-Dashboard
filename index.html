@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Productivity Dashboard</title>
+  <link rel="stylesheet" href="pstyle.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Company Dashboard</h1>
+    <div class="profile">Hi, Admin</div>
+  </header>
+
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li>Dashboard</li>
+        <li>Employees</li>
+        <li>Reports</li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main>
+    <!-- Metrics Cards -->
+    <section class="metrics">
+      <div class="card">
+        <h3>Tasks Completed</h3>
+        <p id="tasks">0</p>
+      </div>
+      <div class="card">
+        <h3>Hours Worked</h3>
+        <p id="hours">0</p>
+      </div>
+      <div class="card">
+        <h3>Avg Performance</h3>
+        <p id="performance">0%</p>
+      </div>
+    </section>
+
+    <!-- Add Employee Form -->
+    <section class="add-employee">
+      <h2>Add New Employee</h2>
+      <form id="employee-form">
+        <input type="text" id="emp-name" placeholder="Name" required>
+        <input type="text" id="emp-dept" placeholder="Department" required>
+        <input type="number" id="emp-tasks" placeholder="Tasks Completed" required>
+        <input type="number" id="emp-performance" placeholder="Performance (%)" required>
+        <button type="submit">Add Employee</button>
+      </form>
+    </section>
+
+    <!-- Search & Employee Table -->
+    <section class="employee-table">
+      <input type="text" id="search" placeholder="Search Employee...">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Tasks Completed</th>
+            <th>Performance (%)</th>
+          </tr>
+        </thead>
+        <tbody id="employee-body"></tbody>
+      </table>
+    </section>
+
+    <!-- Chart Section -->
+    <section class="charts">
+      <canvas id="productivityChart" width="400" height="200"></canvas>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
